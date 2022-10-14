@@ -10,7 +10,12 @@ class DeviceStore {
       { id: 1, name: 'Samsung' },
       { id: 2, name: 'Apple' },
     ];
-    this._devices = [];
+    this._devices = [
+      { id: 1, name: 'Samsung' },
+      { id: 2, name: 'Samsung' },
+    ];
+    this._selectedType = {};
+    this._selectedBrand = {};
     makeAutoObservable(this);
   }
 
@@ -26,6 +31,14 @@ class DeviceStore {
     this._devices = devices;
   }
 
+  setSelectedType(type) {
+    this._selectedType = type;
+  }
+
+  setSelectedBrand(brand) {
+    this._selectedBrand = brand;
+  }
+
   get types() {
     return this._types;
   }
@@ -36,6 +49,14 @@ class DeviceStore {
 
   get devices() {
     return this._devices;
+  }
+
+  get selectedType() {
+    return this._selectedType;
+  }
+
+  get selectedBrand() {
+    return this._selectedBrand;
   }
 }
 
